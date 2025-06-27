@@ -224,11 +224,11 @@ public class NavegaFilmes extends JFrame {
 			if (result.isBeforeFirst()) {
 				result.first();
 			} 			
-			tfCodigo.setText(result.getString("Código"));
-			tfTitulo.setText(result.getString("Titulo"));
-			tfGenero.setText(result.getString("Genero"));
-			tfProdutora.setText(result.getString("Produtora"));
-			tfDataCom.setText(result.getString("DataCompra"));
+			tfCodigo.setText(result.getString("codigo"));
+			tfTitulo.setText(result.getString("titulo"));
+			tfGenero.setText(result.getString("genero"));
+			tfProdutora.setText(result.getString("produtora"));
+			tfDataCom.setText(result.getString("dataCompra"));
 			
 		} catch (Exception e) {
 			// TODO: handle exception
