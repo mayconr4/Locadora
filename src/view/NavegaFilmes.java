@@ -204,10 +204,13 @@ public class NavegaFilmes extends JFrame {
 	}
 	
 	private void carregarTabela() {
-		// TODO Auto-generated method stub
+		
 		String sql = "SELECT * FROM filmes";
 		try {
-			stm = bd.conn.prepareStatement(sql);
+			stm = bd.conn.prepareStatement(sql,
+					ResultSet.TYPE_SCROLL_INSENSITIVE,// Neccessario para navegação
+					ResultSet.CONCUR_READ_ONLY
+					);
 			result = stm.executeQuery();
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null,"Erro!"+e.toString());
@@ -231,7 +234,7 @@ public class NavegaFilmes extends JFrame {
 			tfDataCom.setText(result.getString("dataCompra"));
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 		
 	}
